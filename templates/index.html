@@ -9,7 +9,7 @@
             background-color: rgb(132, 255, 189);
             border: none;
             color: white;
-            padding: 15px 32px;
+            padding: 15px 82px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
@@ -18,20 +18,26 @@
             cursor: pointer;
         }
     </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
 </head>
 
 <body>
     <h1 style="text-align:center;">页面</h1>
-    <p style="text-align:center;">
+    <p style="font-size: large;" style="text-align:center;">
         某些段落，里面可以写一些东西，最好长一点，用来填补这辽阔的
         空白，不过不要太长了，不然后面的helloworld就被挤下去了。
     </p>
     <h2 style="text-align:center;">还有：Hello, World!</h2>
-    <h4>然后这里有什么呢？都是一些测试页面：</h4>
-    <p>
-        <a href="{{ url_for('hello') }}" class="button">Hello, World!</a><br />
-        <a href="{{ url_for('move') }}" class="button">CSS移动</a>
+    <h3>然后这里有什么呢？都是一些测试页面({{page|length}}个)：</h3>
+    <p style="font-size: large;">
+        {% for i in page %}
+        <a href="{{i.url}}" class="button">{{i.name}}</a><br>
+        {% endfor %}
+        <!--<a href="{{ url_for('move') }}" class="button">CSS移动</a>-->
+
     </p>
+    <img alt="父亲节和日环食快乐！" src="{{ url_for('static', filename='img/f.gif') }}">
+    <p style="font-size: large;">就这么多。。。（↑百度的父亲节加日环食快乐↑）<br>对了还有我前端不太擅长，那个谁快来加持我啊！</p>
 </body>
 
 </html>

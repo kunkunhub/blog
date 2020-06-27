@@ -1,0 +1,71 @@
+<html ng-app="ionicApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <title>加载</title>
+    <link href="https://cdn.staticfile.org/ionic/1.3.2/css/ionic.css" rel="stylesheet">
+    <script src="https://cdn.staticfile.org/ionic/1.3.2/js/ionic.bundle.min.js"></script>
+    <script type="text/javascript">
+        angular.module('ionicApp', ['ionic'])
+
+            .controller('MyCtrl', function ($scope) {
+
+            });
+    </script>
+    <style type="text/css">
+        .button {
+            background-color: rgb(132, 255, 189);
+            border: none;
+            color: white;
+            padding: 15px 82px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        body {
+            cursor: url('http://www.runob.com/try/demo_source/finger.png'), auto;
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 40px !important;
+        }
+
+        .spinner svg {
+            width: 19% !important;
+            height: 85px !important;
+        }
+    </style>
+</head>
+
+<body ng-controller="MyCtrl">
+    <ion-content scroll="false" class="has-header">
+        <p>
+            <ion-spinner icon="android"></ion-spinner>
+            <ion-spinner icon="ios"></ion-spinner>
+            <ion-spinner icon="ios-small"></ion-spinner>
+            <ion-spinner icon="bubbles" class="spinner-balanced"></ion-spinner>
+            <ion-spinner icon="circles" class="spinner-energized"></ion-spinner>
+        </p>
+
+        <p>
+            <ion-spinner icon="crescent" class="spinner-royal"></ion-spinner>
+
+            <ion-spinner icon="dots" class="spinner-dark"></ion-spinner>
+            <ion-spinner icon="lines" class="spinner-calm"></ion-spinner>
+            <ion-spinner icon="ripple" class="spinner-assertive"></ion-spinner>
+            <ion-spinner icon="spiral"></ion-spinner>
+        </p>
+
+
+    </ion-content>
+    <a href="{{ url_for('index') }}" class="button">返回首页</a>
+</body>
+
+</html>

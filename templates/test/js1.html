@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Hello World</title>
+    <meta charset="utf-8">
+    <script>
+        function myFunction() {
+            alert("你好，我是一个警告框！");
+        }
+    </script>
+    <title>警告框</title>
     <style>
-        .button {
+        .backbut {
             background-color: rgb(145, 224, 255);
             border: none;
             color: white;
@@ -21,8 +26,9 @@
 </head>
 
 <body>
-    <h1 style="text-align:center;">Hello, World!</h1>
-    <a href="{{ url_for('index') }}" class="button">返回首页</a>
+
+    <input type="button" onclick="myFunction()" value="显示警告框" />
+    <a href="{{ url_for('index') }}" class="backbut">返回首页</a>
 </body>
 
 </html>
