@@ -2,7 +2,8 @@
 这个是一个存网站的仓库的。网站里面打算想放一些视频，由python的flask框架编写。  
 **这个程序现在还不适合用于生产环境，必需等后期换一个服务器。**  
 
-##访问方法
+##访问方法  
+
  __```pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-dotenv Flask  ```__
 
 1. 安装了python3，安装了Flask（如果没有上面这个指令可以一键安装）
