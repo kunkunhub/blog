@@ -6,7 +6,6 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return rp("index.html")
-    # 就可以显示index.html里的内容了！
 
 @app.route('/move')
 def move():
@@ -15,6 +14,10 @@ def move():
 @app.route('/hello')
 def hello():
     return rp("/test/hello.html")
+
+@app.route('/learn')
+def learn():
+    return rp("/learn/1.html")
 
 if __name__ == '__main__':
     app.run(host="127.0.0.1", port="5000", threaded=True) #多线程

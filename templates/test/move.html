@@ -1,43 +1,110 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8"> 
-<title>CSS移动</title>  <!--来源：runoob.com -->
-<style> 
-div
-{
-	width:100px;
-	height:100px;
-	background:red;
-	position:relative;
-	animation:myfirst 5s;
-	-webkit-animation:myfirst 5s; /* Safari and Chrome */
-}
+	<meta charset="utf-8">
+	<title>CSS移动</title>
+	<!--来源：runoob.com -->
+	<style>
+		div {
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: relative;
+			animation: myfirst 5s;
+			-webkit-animation: myfirst 5s;
+			/* Safari and Chrome */
+		}
 
-@keyframes myfirst
-{
-	0%   {background:red; left:0px; top:0px;}
-	25%  {background:yellow; left:200px; top:0px;}
-	50%  {background:blue; left:200px; top:200px;}
-	75%  {background:green; left:0px; top:200px;}
-	100% {background:red; left:0px; top:0px;}
-}
+		@keyframes myfirst {
+			0% {
+				background: red;
+				left: 0px;
+				top: 0px;
+			}
 
-@-webkit-keyframes myfirst /* Safari and Chrome */
-{
-	0%   {background:red; left:0px; top:0px;}
-	25%  {background:yellow; left:200px; top:0px;}
-	50%  {background:blue; left:200px; top:200px;}
-	75%  {background:green; left:0px; top:200px;}
-	100% {background:red; left:0px; top:0px;}
-}
-</style>
+			25% {
+				background: yellow;
+				left: 200px;
+				top: 0px;
+			}
+
+			50% {
+				background: blue;
+				left: 200px;
+				top: 200px;
+			}
+
+			75% {
+				background: green;
+				left: 0px;
+				top: 200px;
+			}
+
+			100% {
+				background: red;
+				left: 0px;
+				top: 0px;
+			}
+		}
+
+		@-webkit-keyframes myfirst
+
+		/* Safari and Chrome */
+			{
+			0% {
+				background: red;
+				left: 0px;
+				top: 0px;
+			}
+
+			25% {
+				background: yellow;
+				left: 200px;
+				top: 0px;
+			}
+
+			50% {
+				background: blue;
+				left: 200px;
+				top: 200px;
+			}
+
+			75% {
+				background: green;
+				left: 0px;
+				top: 200px;
+			}
+
+			100% {
+				background: red;
+				left: 0px;
+				top: 0px;
+			}
+		}
+
+		.button {
+			background-color: rgb(145, 224, 255);
+			border: none;
+			color: white;
+			padding: 5px 12px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 15px;
+			margin: 4px 2px;
+			cursor: pointer;
+		}
+	</style>
+
 </head>
+
 <body>
 
-<p><b>注意:</b> 该实例在 Internet Explorer 9 及更早 IE 版本是无效的。</p>
-
-<div></div>
+	<p><b>注意:</b> 该实例在 Internet Explorer 9 及更早 IE 版本是无效的。</p>
+	<a href="{{ url_for('index') }}" class="button">返回首页</a>
+	<div></div>
 
 </body>
+
 </html>
