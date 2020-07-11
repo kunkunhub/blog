@@ -4,8 +4,8 @@ from flask import render_template as rp
 app = Flask(__name__)
 
 
-@app.route('/')
-def index():
+@app.route('/test')
+def testindex():
     page = [                                        # 主页下网页链接
     {"url": url_for("hello"), "name": "Hello World"},
     {"url": url_for("move"), "name": "CSS移动"},
