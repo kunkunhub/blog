@@ -3,6 +3,9 @@ from flask import Flask, escape, url_for
 from flask import render_template as rp
 app = Flask(__name__)
 
+@app.route("/")
+def index():
+    return rp("home.html")
 
 @app.route('/test')
 def testindex():
