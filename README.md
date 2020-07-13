@@ -4,7 +4,8 @@
 
 ## 访问方法  
 ***
- __```pip install -i https://pypi.tuna.tsinghua.edu.cn/simple python-dotenv Flask  ```__
+ __```pip install -i https://pypi.tuna.tsinghua.edu.cn/simple tornado```__  
+ 首先确保安装了python，然后在终端运行上面的命令来安装tornado，最后只要运行app.py就行。
 
 ## 目录结构  
 ***
@@ -19,8 +20,9 @@
 > 2020/6/27
 >> 创建了第一个测试网页  
 >> 添加了更多测试网页，扩充网站内容  
-***  
->> flsk框架弃用，转用tornado框架，测试页面测试结束，正式开始做网站
+> 2020/7/13  
+> flsk框架弃用，转用tornado框架，测试页面测试结束，正式开始做网站  
+>> 编写Hello, World!  
 ## 未来的计划  
 ***
 > <不知道>  
