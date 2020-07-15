@@ -1,0 +1,6 @@
+写程序并提交步骤：
+1. 写程序，在"E:\git\spwb"这个文件夹里放你写的程序，随便放。顺便说，这个文件夹也叫git仓库。
+
+2. 写完以后打开终端（也叫命令行），程序位置在桌面上的Anaconda Prompt
+3. 执行命令：cd E:\git\spwb && E: && git add . && git commit -m "commit" && git push
+4. 
