@@ -1,6 +1,16 @@
 写程序并提交步骤：
-1. 写程序，在"E:\git\spwb"这个文件夹里放你写的程序，随便放。顺便说，这个文件夹也叫git仓库。
+1.写程序前请先拉取最新仓库，执行：cd E:\git\spwb && E: && git pull origin master
+2. 写程序，在"E:\git\spwb"这个文件夹里放你写的程序，随便放。顺便说，这个文件夹也叫git仓库。
 
-2. 写完以后打开终端（也叫命令行），程序位置在桌面上的Anaconda Prompt
-3. 执行命令：cd E:\git\spwb && E: && git add . && git commit -m "commit" && git push
-4. 
+3. 写完以后打开终端（也叫命令行），程序位置在桌面上的Anaconda Prompt
+4. 执行命令：cd E:\git\spwb && E: && git add . && git commit -m "commit" && git push origin master
+
+git常用命令：
+git add .				--用来将仓库的更改保存，准备提交，每次提交前必需执行
+git commit -m "<一些说明>"		--用来提交更改，跟交作业差不多，将<一些说明>换成自己对这次提交的说明，尽量英文，中文也行。
+git push origin master		--提交给服务器，其它人就能看到了。注意最好先commit在执行这个
+git pull origin master		--从服务器拉取最新的代码，注意写代码之前最好执行一下这个命令，写代码以后就不要执行了，防止程序又变回写代码之前的样子
+git status				--查看现在的状态，比如哪些文件更改了，删除了，增加了……
+git diff				--查看自己对仓库做的更改
+
+以上命令都需要在命令行里执行，并且要切换到这个仓库才能对这个仓库进行更改。切换命令：cd E:\git\spwb && E: 
