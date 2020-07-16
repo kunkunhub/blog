@@ -5,7 +5,7 @@
 ## 访问方法  
 ***
  __```pip install -i https://pypi.tuna.tsinghua.edu.cn/simple tornado```__  
- 首先确保安装了python，然后在终端运行上面的命令来安装tornado，最后只要运行app.py就行。
+ 首先确保安装了python，然后在终端运行上面的命令来安装tornado，最后只要运行server.py就行。
 
 ## 目录结构  
 ***
