@@ -1,8 +1,8 @@
-"""
+
 from sqlite3 import connect, IntegrityError
 import markdown
 import pickle
-conn = connect("db.sqlite3")
+conn = connect("F:\程序\git\spwb\methods\db.sqlite3")
 cur = conn.cursor()
 
 
@@ -25,7 +25,7 @@ def new_article(title: str, markd: str)->int:
     return id-1
 
 def get_article(id):
-    cur.execute("SELECT title, content FROM article WHERE id=?;", (id,))    
+    cur.execute("SELECT title, content FROM `article` WHERE id=?;", (id,))    
     #sqlite3.OperationalError: no such table: article
     return cur.fetchall()
 
@@ -37,5 +37,4 @@ def stop():
     f.flush()
     f.close()
 
-"""
-import shelve as sh
+
