@@ -2,6 +2,7 @@ import db
 import os
 import sys
 from pprint import pprint as pt
+sys.path.append("")
 
 def hlp():
     h = """\
@@ -37,11 +38,11 @@ def new_article():
 请选择新建文章的方式(输入序号)：\
 """)
     if x == "1":
-        print('请输入文章内容, 输入"-*-end-*-"结束(文章为markdown格式)：\n')
+        print('请输入文章内容, 输入"---end---"结束(文章为markdown格式)：\n')
         l = ""
         while(True):
             m = input()
-            if m == "-*-end-*-":
+            if m == "---end---":
                 break
             l = f"{l}\n{m}"
     elif x == "2":
@@ -73,6 +74,7 @@ CREATE TABLE article(
 def list_article():
     pt(db.article_list())
 
+path = os.path.dirname(__file__)
 u = {
     "help": hlp,
     "": lambda : None,
@@ -80,13 +82,14 @@ u = {
     "create-table": create_table,
     "python": lambda : os.system(f"{sys.executable}"),
     "cmd": lambda : os.system("cmd"),
-    "sql": lambda : os.system(f"sqlite3 {os.path.dirname(__file__)}\\db.sqlite3"),
+    "sql": lambda : os.system(f"sqlite3 {path}\\db.sqlite3"),
     "list-article": list_article,
     "run": lambda : os.system(
-    f'cd /d {os.path.dirname(__file__)} && cd .. && {sys.executable} server.py'),
+    f'cd /d {path} && cd .. && "{sys.executable}" server.py'),
     "cls": lambda : os.system("cls")
 }
-print('欢迎进入项目操作终端！\n键入"exit"退出，键入"help"获取更多消息')
+print('欢迎进入项目操作终端！\n键入"exit"退出，键入"help"获取更多信息')
+
 while(True):
     cmd = input("shell> ")
     if cmd == "exit":
