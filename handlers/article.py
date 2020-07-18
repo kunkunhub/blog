@@ -5,5 +5,5 @@ from db import get_article
 class ArticleHandler(RequestHandler):
     def get(self, x):
         a = get_article(x)    
-        self.render("blog.html", title=a[0][0], text=a[0][1])
+        self.render("blog.html", title=a[0], text=a[1])
 
