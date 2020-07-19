@@ -1,15 +1,9 @@
 
 from sqlite3 import connect, IntegrityError
 import markdown
-import pickle
 import os
 conn = connect(f"{os.path.dirname(__file__)}\\db.sqlite3")
 cur = conn.cursor()
-
-
-f = open(f"{os.path.dirname(__file__)}\\id.dat", "rb+")
-
-id = pickle.load(f) 
 
 def new_article(title: str, markd: str)->int:
     global id
@@ -32,7 +26,7 @@ def get_article(id):
 
 def article_list():
     cur.execute("SELECT id, title FROM `article`")
-    return cur.fetchall()[0]
+    return cur.fetchall()
 
 
 def stop():
