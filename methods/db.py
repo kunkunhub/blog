@@ -5,7 +5,7 @@ import os
 conn = connect(f"{os.path.dirname(__file__)}\\db.sqlite3")
 cur = conn.cursor()
 
-def new_article(title: str, markd: str)->int:
+def new_article(title: str, markd: str):
     global id
     html = markdown.markdown(markd, output_format="html5")
     try:
@@ -14,10 +14,6 @@ def new_article(title: str, markd: str)->int:
         id += 1
         cur.execute("insert into `article` (title, content) values (?, ?);", (title, html))
     conn.commit()
-    id += 1
-    pickle.dump(id, f)
-    f.flush()
-    return id-1
 
 def get_article(id):
     cur.execute("SELECT title, content FROM `article` WHERE id=?;", (id,))    
