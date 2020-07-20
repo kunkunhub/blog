@@ -1,13 +1,13 @@
 #!/usr/bin/env Python
 # coding=utf-8
 
-from url import url     #瀵煎叆缃戠珯鐩綍
+from url import url     #导入网站目录
 
 import tornado.web
 import os
 
 settings = dict(
-    template_path = os.path.join(os.path.dirname(__file__), "templates"),   #璁剧疆鐩綍
+    template_path = os.path.join(os.path.dirname(__file__), "templates"),   #设置目录
     static_path = os.path.join(os.path.dirname(__file__), "statics")
 )
 
