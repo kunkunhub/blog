@@ -1,10 +1,10 @@
-from flask import Flask
+from flask import Flask, url_for, render_template
 import time
 app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return 'Hello, World!'
+    return render_template("index.html")
 
 @app.route('/wait')
 def wait():
@@ -12,4 +12,4 @@ def wait():
     return "OK"
 
 if __name__ == "__main__":
-    app.run(port=80, processes=True)
+    app.run(port=80, threaded=True)
