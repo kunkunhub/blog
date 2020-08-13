@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% block head %}
+    <meta charset="utf-8" />
+    <title>{% block title %}编程小站{% endblock %}</title>
+    <style>
+      /*显示导航栏*/
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover {
+        background-color: #111;
+      }
+      /*在顶端固定导航栏*/
+      ul {
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+    </style>
+    {% block styles %}{% endblock %}
+    {% endblock head %}
+  </head>
+  <body>
+    <ul>
+      <li><a class="active" href="{{ url_for('index') }}">主页</a></li>
+      <li><a href="#xxx">学习中心</a></li>
+      <li><a href="{{ url_for('about') }}">关于我们</a></li>
+      <li><a href="#about">注册账号</a></li>
+      <li><a href="#sum">登录账号</a></li>
+    </ul>
+    <br>
+    <br>
+    <br>
+    <!-- 内容 -->
+    {% block content %}
+    {% endblock content %}
+  </body>
+</html>

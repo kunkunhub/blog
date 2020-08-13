@@ -1,90 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <style>
-            ul {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-            }
-
-            li {
-                float: left;
-            }
-
-          li  a {
-                display: block;
-                background-color: rgb(0, 0, 0);
-                color: white;
-                width: 80px;
-                text-align: center;
-                padding: 4px 0px;
-                text-decoration: none;
-          }
-            /* 鼠标移动到选项上修改背景颜色 */
-            li a:hover {
-                background-color: rgb(20, 143, 224);
-                color: rgb(16, 49, 235);
-                font-family: "华文行楷";
-            }
-            #search {
-                float: right;
-                font-size: 28px;
-            }
-        </style>
-        <link
-            rel="stylesheet"
-            href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
-        />
-        <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-        <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
-      
-    </head>
-
-    <body>
-           <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1595040432203&di=e63d654fb0c383c21f2af90b2731111e&imgtype=0&src=http%3A%2F%2Fimg.juimg.com%2Ftuku%2Fyulantu%2F120522%2F188133-120522141A665.jpg" alt="科技配图"width="400" height="200"> 
-
-        <!-- 空格调整格式 -->
-        &nbsp
-        &nbsp
-        &nbsp
-        &nbsp
-        &nbsp
-        &nbsp
-        &nbsp
-        &nbsp
-        &nbsp
-        &nbsp
-        &nbsp
-        &nbsp
-        &nbsp
-        &nbsp
-        &nbsp
-        &nbsp
-        &nbsp
-        &nbsp
-        &nbsp
-        &nbsp
-        &nbsp
-        &nbsp
-        &nbsp
-        &nbsp
-        &nbsp
-        &nbsp
- <!-- 新增按钮 -->
-        <button id="注册按钮" style="background: #3d83fa;color: #06f7e3">注册</button>
-        <button id="注册按钮" style="background: #3d83fa;color: #06f7e3">登录</button>
-        
-        <!-- 编写导航栏 -->
-        <ul>
-            <li><a href="/">主页</a></li>
-            <li><a href="/Python">Python教程</a></li>
-            <li><a href="/C++教程">C++教程</a></li>
-            <li><a href="/关于我们">关于我们</a></li>
-        </ul>
-
+{% extends 'base.html' %}
+{% block content %}
         <div class="panel-group" id="accordion">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -120,5 +35,4 @@
                 </div>
             </div>
         </div>
-    </body>
-</html>
+{% endblock content %}
