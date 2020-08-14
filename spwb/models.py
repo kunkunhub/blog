@@ -5,6 +5,6 @@ import os
 from spwb import db
 
 class Article(db.Model):
-    id = db.Column(db.Integer, primary_key=true)
+    id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(60))
     content = db.Column(db.Text)

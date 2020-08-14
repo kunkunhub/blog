@@ -1,4 +1,6 @@
-from spwb import app
+from spwb import app, db
+from spwb.models import Article
+from markdown import markdown
 import click
 
 @app.cli.command()  # 注册为命令
@@ -9,3 +11,22 @@ def initdb(drop):
         db.drop_all()
     db.create_all()
     click.echo('Initialized database.')  # 输出提示信息
+
+@app.cli.command()
+def newartc():
+    print('请输入文章标题：', end='')
+    t = input()
+    print('请输入文章正文，输入"---end---"结束输入')
+    md = ""
+    a = ''
+    while not (a == '---end---'):
+        a = input()
+        md = md + "\n" + a
+    print('正在转换为html')
+    html = markdown(md)
+    print("正在写入数据库")
+    newartc = Article(title=t, content=html)
+    db.session.add(newartc)
+    db.session.commit()
+    print("完成")
+
