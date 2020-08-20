@@ -10,7 +10,7 @@ app.jinja_env.trim_blocks = True
 app.jinja_env.lstrip_blocks = True
 
 db = SQLAlchemy(app)
-# toolbar = DebugToolbarExtension(app)
+toolbar = DebugToolbarExtension(app)
 cache = Cache(app)
 
 from spwb import views, errors, commands

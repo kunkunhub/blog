@@ -4,25 +4,25 @@
     {% block head %}
     <meta charset="utf-8" />
     <title>{% block title %}编程小站{% endblock %}</title>
+    <!--
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 	  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-	  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+
     {% block styles %}{% endblock %}
     {% endblock head %}
   </head>
   <body>
-    <nav class="navbar navbar-default" role="navigation">
-      <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="{{ url_for('index') }}">编程小站</a>
-      </div>
-      <div>
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="{{ url_for('index') }}">首页</a></li>
+    <nav class="nav-wrapper  blue lighten-1">
+        
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><a href="{{ url_for('index') }}"><big>个人博客</big></a></li>
+          <li><a href="{{ url_for('index') }}">首页</a></li>
           <li><a href="{{ url_for('about') }}">关于</a></li>
         </ul>
-      </div>
-      </div>
     </nav>
     <!-- 内容 -->
     {% block content %}

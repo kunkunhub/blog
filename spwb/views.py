@@ -1,4 +1,4 @@
-from spwb import app
+from spwb import app, cache
 from spwb.models import Article
 from flask import render_template, abort
 

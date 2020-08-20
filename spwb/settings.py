@@ -17,6 +17,9 @@ SQLALCHEMY_DATABASE_URI = prefix + os.path.join(
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 # 密钥
 SECRET_KEY = os.getenv("SECRET_KEY")
+# 缓存类型
+# 有"null"(无缓存), "simple"(py字典), "filesystem", "redis"等
+CACHE_TYPE = "simple"
 #-*- 仅用于开发 -*-#
 
 DEBUG_TB_INTER_CEPT_REDIRECTS = False
