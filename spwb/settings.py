@@ -15,3 +15,8 @@ SQLALCHEMY_DATABASE_URI = prefix + os.path.join(
 )
 # 关闭对模型修改的监控
 SQLALCHEMY_TRACK_MODIFICATIONS = False
+# 密钥
+SECRET_KEY = os.getenv("SECRET_KEY")
+#-*- 仅用于开发 -*-#
+
+DEBUG_TB_INTER_CEPT_REDIRECTS = False

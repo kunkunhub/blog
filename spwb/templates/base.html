@@ -4,50 +4,26 @@
     {% block head %}
     <meta charset="utf-8" />
     <title>{% block title %}编程小站{% endblock %}</title>
-    <style>
-      /*显示导航栏*/
-      ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #333;
-      }
-
-      li {
-        float: left;
-      }
-
-      li a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-      }
-
-      li a:hover {
-        background-color: #111;
-      }
-      /*在顶端固定导航栏*/
-      ul {
-        position: fixed;
-        top: 0;
-        width: 100%;
-      }
-    </style>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     {% block styles %}{% endblock %}
     {% endblock head %}
   </head>
   <body>
-    <ul style="font-family: 宋体;">
-      <li><a class="active" href="{{ url_for('index') }}">主页</a></li>
-      <li><a href="{{ url_for('about') }}">关于我们</a></li>
-
-    </ul>
-    <br>
-    <br>
-    <br>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="{{ url_for('index') }}">编程小站</a>
+      </div>
+      <div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="{{ url_for('index') }}">首页</a></li>
+          <li><a href="{{ url_for('about') }}">关于</a></li>
+        </ul>
+      </div>
+      </div>
+    </nav>
     <!-- 内容 -->
     {% block content %}
     {% endblock content %}

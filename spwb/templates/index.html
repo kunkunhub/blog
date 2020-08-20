@@ -1,49 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
+<br><br><br>
+<ul>
+    {% for i in arts %}
+    <li><a href="/p/{{ i[0] }}"></a>{{i[1]}}</li>   <!-- 文章id和标题 -->
+    {% endfor %}
+</ul>
 
-    
-<link
-    rel="stylesheet"
-    href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
-/>
-<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
-        <div class="panel-group" id="accordion">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a
-                            data-toggle="collapse"
-                            data-parent="#accordion"
-                            href="#collapseOne"
-                            style="font-family:'华文行楷';text-align: center;"
-                        >
-                            什么是编程？
-                        </a>
-                    </h4>
-                </div>
-
-                <div id="collapseOne" class="panel-collapse collapse in">
-                    <div
-                        class="panel-body"
-                        ,
-                        style="font-family:'华文行楷';font-size:20px;text-align: center;"
-                    >
-                    <!-- 程序介绍 -->
-                        编程是编定程序的中文简称，就是让计算机代为解决某个问题，对某个计算
-                        <br />
-                        体系规定一定的运算方式，使计算体系按照该计算方式运行，并最终得到相应结果的过程。
-                        <br />
-                        为了使计算机能够理解人的意图，人类就必须将需解决的问题的思路、方法和手段通过计算机能够理解的形式告诉计算机，使得计算机能
-                        <br />
-                        够根据人的指令一步一步去工作，完成某种特定的任务。这种人和计算体系之间交流的过程就是编程。
-                        <br>
-                        <br>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-{% endblock content %}
+{% endblock %}

@@ -3,3 +3,5 @@ flask-sqlalchemy
 python-dotenv
 click
 watchdog
+flask-debugtoolbar
+flask-caching
