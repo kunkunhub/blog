@@ -7,25 +7,27 @@ from flask import render_template, abort, request, redirect
 @cache.memoize()
 def index(page):        #主页
     l = []
-    for i in Article.query.all():
-        l.append((i.id, i.title))
     pg = request.args.get('page', 1)
     try:
-        pg = int(pg)
+        pg = int(page)
     except ValueError:
-        abort(404)
-    pageination = Article.query.paginate(page, per_page=50)
+        pg = 1
+    pageination = Article.query.paginate(pg, per_page=20)
     if pg<0 or pg>pageination.pages:
-        abort(404)
+        pg = 1
+    for i in pageination.items:
+        l.append((i.id,  i.title, i.describe))
     return render_template("index.html", arts=l, end=pageination.pages, int=int)
 
 
 @app.route('/about')
+@cache.cached()
 def about():        #关于页面
     return render_template("about.html")
 
 
 @app.route('/p/<pid>')
+@cache.cached()
 def p(pid):
     """
     文章的访问

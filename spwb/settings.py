@@ -19,7 +19,7 @@ SQLALCHEMY_TRACK_MODIFICATIONS = False
 SECRET_KEY = os.getenv("SECRET_KEY")
 # 缓存类型
 # 有"null"(无缓存), "simple"(py字典), "filesystem", "redis"等
-CACHE_TYPE = "filesystem"
+CACHE_TYPE = "null"
 CACHE_DIR = os.path.join(os.path.dirname(app.root_path), 'cache') 
 CACHE_DEFAULT_TIMEOUT = 20*60
 #-*- 仅用于开发 -*-#

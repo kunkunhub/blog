@@ -9,15 +9,18 @@
     
 </ul>
 -->
-{% for i in arts %}
+
 <div>
+  {% for i in arts %}
   <div class="row">
-    <div class="col s12 m6">
-      <div class="card orange accent-2">
+    
+    <div class="col s12">
+      <div class="card orange accent-2 z-depth-5">
         <div class="card-content white-text">
           <span class="card-title"><a href="/p/{{ i[0] }}">{{ i[1] }}</a></span>
-          <p>我是一个很简单的卡片。我很擅长于包含少量的信息。我很方便，因为我只需要一个小标记就可以...
-              <a href="/p/{{ i[0] }}">阅读全文</a></p>
+          {% if i[2] %}
+          <p>{{i[2]}}<a href="/p/{{ i[0] }}">阅读全文</a></p>
+          {% endif %}
         </div>
         <!--
         <div class="card-action">
@@ -27,8 +30,9 @@
       </div>
     </div>
   </div>
+  
 </div>
-
+{% endfor %}
 {{ pagination(url='/', end=end, int=int, request=request) }}
-  {% endfor %}
+  
 {% endblock %}
