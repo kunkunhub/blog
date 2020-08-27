@@ -3,7 +3,7 @@
   <head>
     {% block head %}
     <meta charset="utf-8" />
-    <title>{% block title %}编程小站{% endblock %}</title>
+    <title>{% block title %}kunkun的个人博客{% endblock %}</title>
     <!--
     
   
@@ -12,15 +12,17 @@
     <script src="../static/bootstrap/js/bootstrap.min.js"></script>-->
     <script src="../static/materialize/materialize.min.js"></script>
     <link rel="stylesheet" href="../static/materialize/materialize.min.css">
-    
-    {% block styles %}{% endblock %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    {% block styles %}
+    {% endblock %}
     {% endblock head %}
   </head>
-  <body background="../static/spikes.png">
+  <body <!--background="../static/spikes.png"--></body>
     <nav class="nav-wrapper blue lighten-1">
         
-        <ul id="nav-mobile" class="left hide-on-med-and-down">
-          <li class="waves-effect waves-light"><a href="{{ url_for('index') }}"><big>个人博客</big></a></li>
+        <ul id="nav-mobile" class="left hide-on-med-and-down" style="font-family: 宋体;"> 
+          <li class="waves-effect waves-light"><a href="{{ url_for('index') }}">
+            <big>kunkun的个人博客</big></a></li>
           <li class="waves-effect waves-light"><a href="{{ url_for('index') }}">首页</a></li>
           <li class="waves-effect waves-light"><a href="{{ url_for('about') }}">关于</a></li>
         </ul>
@@ -28,5 +30,32 @@
     <!-- 内容 -->
     {% block content %}
     {% endblock content %}
+    <!-- 页脚 -->
+    <footer class="page-footer blue darken-4">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">页脚内容</h5>
+            <p class="grey-text text-lighten-4">本人是个小学生，12岁，这是我做的第一个网站, 使用flask框架写成。
+              有问题可以联系我 <br> qq: 2749320352 </p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">链接</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#!"><a href="{{ url_for('index') }}">首页</a></a></li>
+              <li><a class="grey-text text-lighten-3" href="#!"><a href="{{ url_for('about') }}">关于</a></a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">链接 3</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">链接 4</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2014 Copyright 文本
+        <a class="grey-text text-lighten-4 right" href="#!">更多链接</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

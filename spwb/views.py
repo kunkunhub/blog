@@ -1,20 +1,17 @@
 from spwb import app, cache
 from spwb.models import Article
-from flask import render_template, abort, request, redirect
+from flask import render_template, abort, request, redirect, flash
 
 
 @app.route('/', defaults={'page': 1})
 @cache.memoize()
 def index(page):        #主页
     l = []
-    pg = request.args.get('page', 1)
-    try:
-        pg = int(page)
-    except ValueError:
-        pg = 1
+    pg = request.args.get('page', 1, type=int)
     pageination = Article.query.paginate(pg, per_page=20)
     if pg<0 or pg>pageination.pages:
         pg = 1
+    
     for i in pageination.items:
         l.append((i.id,  i.title, i.describe))
     return render_template("index.html", arts=l, end=pageination.pages, int=int)

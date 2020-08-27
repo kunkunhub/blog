@@ -2,5 +2,12 @@
 {% block title %}{{ title }}{% endblock %}
 {% block content %}
     <!-- 文章正文 -->
-    {{ content | safe }}
-{% endblock %}
+    <div class="container">
+        <div class="card white z-depth-2" style="font-family: 宋体, consolas;font-size: 18px; margin-top:20px;">
+            <div style="margin:20px;">
+            {{ content | safe }}
+            </div>
+        </div>
+    </div>
+    
+{% endblock %} 

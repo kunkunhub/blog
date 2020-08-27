@@ -9,30 +9,39 @@
     
 </ul>
 -->
-
+<center>
+  <h3>kunkun的个人博客。</h3>
+  <p style="font-size: 20px;">我是一个小学生，12岁，喜欢编程。
+    这是我做的第一个网站, 使用python flask框架开发。<br>
+    QQ: 2749320352 <br>
+    Github: https://github.com/kunkunhub <br>
+    Gitee: https://gitee.com/gitkunkun
+  </p>
+</center>
 <div>
   {% for i in arts %}
-  <div class="row">
-    
-    <div class="col s12">
-      <div class="card orange accent-2 z-depth-5">
-        <div class="card-content white-text">
-          <span class="card-title"><a href="/p/{{ i[0] }}">{{ i[1] }}</a></span>
-          {% if i[2] %}
-          <p>{{i[2]}}<a href="/p/{{ i[0] }}">阅读全文</a></p>
-          {% endif %}
-        </div>
-        <!--
+  <div class="container">
+    <div>
+      <div>
+        <div class="card white z-depth-2">
+          <div class="card-content">
+            <span class="card-title"><a href="/p/{{ i[0] }}">{{ i[1] }}</a></span>
+            {% if i[2] %}
+            <p>{{i[2]}}<a href="/p/{{ i[0] }}">阅读全文</a></p>
+            {% endif %}
+          </div>
+          <!--
         <div class="card-action">
           <a href="#">这是一个链接</a>
           <a href="#">这是一个链接</a>
         </div>-->
+        </div>
       </div>
     </div>
   </div>
-  
+
 </div>
 {% endfor %}
 {{ pagination(url='/', end=end, int=int, request=request) }}
-  
+
 {% endblock %}

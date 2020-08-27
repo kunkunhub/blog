@@ -22,9 +22,12 @@ def newartc():
     print('请输入文章正文，输入"---end---"结束输入')
     md = ""
     a = ''
-    while not (a == '---end---'):
+    while True:
         a = input()
-        md = md + "\n" + a
+        if a != "---end---":
+            md = md + "\n" + a
+        else:
+            break
     print('正在转换为html')
     html = markdown(md)
     print("正在写入数据库")
