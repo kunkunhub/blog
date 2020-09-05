@@ -5,4 +5,7 @@ click
 watchdog
 flask-debugtoolbar
 flask-caching
+faker
+redis
+markdown
 
