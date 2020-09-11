@@ -12,3 +12,22 @@ from wtforms.validators import (
     InputRequired,
 )
 
+class LoginForm(Form):
+    username = StringField(
+        '用户名',
+        validators=[
+            DataRequired(), 
+            Length(8, 128), 
+            InputRequired()
+        ]
+    )
+    password = PasswordField(
+        '密码', 
+        validators=[
+            DataRequired(), 
+            Length(8, 128), 
+            InputRequired()
+        ]
+    )
+    remember = BooleanField("记住我")
+    submit = SubmitField("登录")

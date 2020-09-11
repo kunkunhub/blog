@@ -1,5 +1,5 @@
 from spwb import app, db
-from spwb.models import Article
+from spwb.models import Article, Admin
 from markdown import markdown
 import click
 from faker import Faker
@@ -54,3 +54,17 @@ def forge(count):
             db.session.commit()
     db.session.commit()
     click.echo("完成！")
+
+@app.cli.command()
+@click.option('--username', prompt=True, help="用户名")
+@click.option('--password', prompt=True, help="密码")
+def init(username, password):
+    """
+    初始化管理员，如果已经有管理员就覆盖。
+    """
+    click.echo("初始化数据库")
+    db.create_all()
+
+    admin = Admin.query.first()
+    if admin:
+        pass

@@ -1,11 +1,15 @@
 from spwb import app, cache
 from spwb.models import Article
 from flask import render_template, abort, request, redirect, flash
+from spwb.forms import LoginForm
 
 
 @app.route('/', defaults={'page': 1})
 @cache.memoize()
-def index(page):        #主页
+def index(page):        
+    """
+    主页
+    """
     l = []
     pg = request.args.get('page', 1, type=int)
     pageination = Article.query.paginate(pg, per_page=20)
@@ -34,3 +38,11 @@ def p(pid):
         # 如果没找到
         abort(404)
     return render_template("blog/blog.html", title=pdat.title, content=pdat.content)
+
+@app.route('/admin/login', methods=['GET', 'POST'])
+def login():
+    """
+    管理员登录页面
+    """
+    form = LoginForm()
+    return render_template('/admin/login.html', form=form)
