@@ -67,4 +67,7 @@ def init(username, password):
 
     admin = Admin.query.first()
     if admin:
+        click.echo("管理员用户已存在")
+        click.echo("进行覆盖")
+    else:
         pass
