@@ -4,16 +4,28 @@
 
 ## 访问方法  
 ### 开发时访问：  
-> 首先确保安装了 python3，然后安装依赖项，最后只要在终端运行flask run app.py 就行。
+首先确保安装了 python3  
+接着安装依赖项:  
+```
+$ pip install -r requirements.txt  
+```
+然后需要设置SECRET_KEY:  
+```
+新建.env文件
+写入
+SECRET_KEY="<xxx>"
+把<xxx>换成一个复杂的字符串
+```
+最后就能运行了:  
+```
+$ flask run
+```
+要注意，这个命令要在和这个README同级目录下执行
 ### 生产环境部署：  
-有时间我会写一篇文章关于这个
-
-##### 依赖项(pip 直接安装)：  
-请见requirements.txt  
-你可以使用 pip install -r requirements.txt 命令来安装它们。
+有时间我会写一篇文章关于这个  
 
 ## 更新日志  
-可以去看Git提交记录
+可以去看Git提交记录  
 
 ## 已完成的功能  
 1. 首页文章列表  

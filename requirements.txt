@@ -8,4 +8,6 @@ flask-caching
 faker
 redis
 markdown
+flask_wtf
+wtforms
 
